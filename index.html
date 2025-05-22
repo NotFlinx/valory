@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bio | slat.cc Style with Music Playlist</title>
+  <style>
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;700&display=swap');
+
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      background: #0e1117;
+      color: #f5f7fa;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    /* Container */
+    .container {
+      max-width: 420px;
+      width: 100%;
+      background: #161b24;
+      border-radius: 16px;
+      padding: 32px 28px 40px;
+      box-shadow:
+        0 4px 12px rgba(0,0,0,0.3),
+        inset 0 0 40px rgba(255,255,255,0.04);
+      text-align: center;
+    }
+
+    /* Profile Image */
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 24px;
+      border: 3px solid #4fd1c5;
+      box-shadow: 0 0 15px #3bc9a9ab;
+      transition: transform 0.3s ease;
+    }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .profile-pic:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Name */
+    h1 {
+      font-weight: 700;
+      font-size: 2.4rem;
+      letter-spacing: 0.05em;
+      margin: 0 0 8px;
+      color: #a0f6e1;
+      user-select: none;
+    }
+
+    /* Subtitle */
+    h2 {
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: #75c2b3dd;
+      margin: 0 0 24px;
+      font-style: italic;
+      user-select: none;
+    }
+    
+    /* Bio */
+    p.bio {
+      font-weight: 300;
+      color: #9ab8c2;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 0 32px;
+    }
+
+    /* Social Links */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 36px;
+    }
+
+    .social-link {
+      color: #75c2b3cc;
+      text-decoration: none;
+      font-size: 1.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid #75c2b3cc;
+      transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    .social-link:hover,
+    .social-link:focus-visible {
+      color: #4fd1c5;
+      border-color: #4fd1c5;
+      background-color: #4fd1c520;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Icons - simple svg */
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* Music Player */
+    .music-player {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: #75c2b3cc;
+      user-select: none;
+    }
+    .music-player button {
+      background: #4fd1c5;
+      border: none;
+      border-radius: 9999px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 12px #4fd1c5aa;
+    }
+    .music-player button:hover,
+    .music-player button:focus-visible {
+      background: #3bb9a3;
+      outline: none;
+      box-shadow: 0 0 16px #3bb9a3cc;
+    }
+    .music-player button svg {
+      width: 24px;
+      height: 24px;
+      fill: #0e1117;
+    }
+    .music-player .track-info {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #a0f6e1;
+    }
+    .music-player .track-info2 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #a0f6e1;
+    }
+    .music-player audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main" aria-label="Personal bio">
+    <div class="profile-pic" aria-label="Profile picture">
+      <img src="./images/valory-pfp.jpg" alt="Profile picture" />
+    </div>
+    <h1>Valory.py</h1>
+    <h2>Creative Developer & Gooner</h2>
+    <p class="bio">Dont mention J*bs, W*rk, Empl*yment, Educ*tion, Sh*wers, Hyg*ene around <b>ME!</b><br>Friends: <b>cycy, jrvr, seamus, nox, mysty, land, moose, bleppy, hiker, lynx, bleppy, pengutre, beetle, youne, red, logical, DPR, spool, kardin (yes the yt), ghostremz, nathan</b><br>I like Fried by Flouride, coding, exploring</p>
+    <p><b>Dm me on discord by click the email icon to set something up</b></p>
+    <nav class="socials" aria-label="Social media links">
+      <a href="https://discordapp.com/users/1333493627481096244" class="social-link" title="Send a message on Discord" aria-label="Discord">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2-8 5-8-5h16ZM4 18V8l8 5 8-5v10H4Z"/></svg>
+      </a>
+      <a href="https://github.com/NotFlinx" target="_blank" rel="noopener" class="social-link" title="GitHub profile" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.2C6.73 20.65 6 19.55 6 19.55a3 3 0 0 0-1.27-1.67c-1.04-.7.08-.68.08-.68a2.37 2.37 0 0 1 1.73 1.16 2.41 2.41 0 0 0 3.31.94 2.48 2.48 0 0 1 .72-1.55c-2.66-.3-5.46-1.33-5.46-5.93a4.64 4.64 0 0 1 1.24-3.23 4.3 4.3 0 0 1 .12-3.18s1-.3 3.3 1.23a11.4 11.4 0 0 1 6 0c2.28-1.53 3.28-1.23 3.28-1.23a4.3 4.3 0 0 1 .13 3.18 4.64 4.64 0 0 1 1.23 3.22c0 4.6-2.8 5.62-5.47 5.92a2.78 2.78 0 0 1 .8 2.16v3.2c0 .32.22.7.83.58A12 12 0 0 0 12 0Z"/></svg>
+      </a>
+      <a href="https://youtube.com/channel/UCzX_AKgFUPqJ8xlOTQJwJPg" target="_blank" rel="noopener" class="social-link" title="YouTube channel" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M23.498 6.186a2.997 2.997 0 0 0-2.108-2.11C19.646 3.5 12 3.5 12 3.5s-7.645 0-9.391.576a2.997 2.997 0 0 0-2.108 2.11C0 8.013 0 12 0 12s0 3.987.5 5.814a2.997 2.997 0 0 0 2.108 2.109C4.355 20.5 12 20.5 12 20.5s7.646 0 9.39-.577a2.997 2.997 0 0 0 2.108-2.109c.5-1.827.5-5.814.5-5.814s0-3.987-.5-5.814zM9.75 15.5v-7l6 3.5-6 3.5z"/>
+        </svg>
+      </a>
+    </nav>
+    
+    <div class="music-player" aria-label="Music player">
+      <button id="play-pause" aria-label="Play music" title="Play music" type="button">
+        <svg id="play-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z"/></svg>
+        <svg id="pause-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+      </button>
+      <div class="track-info" aria-live="polite" id="track-info">Track: Loading...</div>
+      <div class="track-info2" aria-live="polite" id="track-info2">Artist: Loading...</div>
+      <audio id="audio-player" preload="auto"></audio>
+    </div>
+  </main>
+
+  <script>
+    (() => {
+      const playlist = [
+        { title: 'The Love I Lost', artist: 'fried by flouride', src: './music/The-Love-I-Lost-by-fried-by-flouride.mp3' }
+      ];
+
+      const playPauseBtn = document.getElementById('play-pause');
+      const audioPlayer = document.getElementById('audio-player');
+      const playIcon = document.getElementById('play-icon');
+      const pauseIcon = document.getElementById('pause-icon');
+      const trackInfo = document.getElementById('track-info');
+      const trackInfo2 = document.getElementById('track-info2');
+
+      if (!playPauseBtn || !audioPlayer || !playIcon || !pauseIcon || !trackInfo || !trackInfo2) return;
+
+      let isPlaying = false;
+      let currentTrackIndex = 0;
+
+      function loadTrack(index) {
+        if (index < 0 || index >= playlist.length) return;
+        const track = playlist[index];
+        audioPlayer.src = track.src;
+        audioPlayer.load();
+        trackInfo.textContent = 'Track: ' + track.title;
+        trackInfo2.textContent = 'Artist: ' + track.artist;
+      }
+
+      audioPlayer.addEventListener('ended', () => {
+        currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+        loadTrack(currentTrackIndex);
+        audioPlayer.play();
+      });
+
+      loadTrack(currentTrackIndex);
+
+      playPauseBtn.addEventListener('click', () => {
+        if (isPlaying) {
+          audioPlayer.pause();
+        } else {
+          audioPlayer.play();
+        }
+      });
+
+      audioPlayer.onplay = () => {
+        isPlaying = true;
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+        playPauseBtn.setAttribute('aria-label', 'Pause music');
+        playPauseBtn.setAttribute('title', 'Pause music');
+        trackInfo.textContent = 'Playing: ' + playlist[currentTrackIndex].title;
+        trackInfo2.textContent = 'Artist: ' + playlist[currentTrackIndex].artist;
+      };
+
+      audioPlayer.onpause = () => {
+        isPlaying = false;
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+        playPauseBtn.setAttribute('aria-label', 'Play music');
+        playPauseBtn.setAttribute('title', 'Play music');
+        trackInfo.textContent = 'Paused: ' + playlist[currentTrackIndex].title;
+        trackInfo2.textContent = 'Artist: ' + playlist[currentTrackIndex].artist;
+      };
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden && audioPlayer && !audioPlayer.paused) {
+          audioPlayer.pause();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
